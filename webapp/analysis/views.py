@@ -21,6 +21,7 @@ import django_tables2
 import io
 import pandas as pd
 from datetime import datetime, timedelta
+import time
 from email.utils import parsedate_tz
 
 
@@ -261,11 +262,13 @@ class Graph(TemplateView):
 
 @login_required
 def analysis(request):
-	context ={'studies_html':""} 
+	context ={'studies_html':""}
+	context['studies_html']+=("<table class=\"table table-bordered\"><tr><th>Study ID</th><th>Number of Tweets</th><th>Time Stamp</th><th>User</th><th>Create Analysis</th></tr>")
 	user = request.user
 	for x in Study.objects.all():
 		if str(x.user) == str(user):
-			context['studies_html']+=("<option value=\""+x.study_id+"\">"+x.study_id[:-10]+"</option>")
+			context['studies_html']+=("<tr><td>"+x.study_id[:-10]+"</td><td>"+str(x.count)+"</td><td>"+time.ctime(int(x.study_id[-10:]))+"</td><td>"+x.user+"</td><td><button type=\"submit\" name=\"study_select\" value=\""+x.study_id+"\">Create Analysis</button></td></tr>")
+	context['studies_html']+=("</table>")
 	return render(request, 'analysis/analysis.html', context)
 
 
