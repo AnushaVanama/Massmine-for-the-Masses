@@ -62,7 +62,7 @@ def make_query(request):
 
 		hshtg = None
 		keyword = keyword.replace(' ','_')
-		new_study = Study(user=str(request.user),study_id=keyword+str(int(time.time())))
+		new_study = Study(user=str(request.user),study_id=keyword+str(int(time.time())), count=count)
 		new_study.save()
 
 		for i in output:
