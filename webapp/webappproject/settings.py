@@ -129,7 +129,7 @@ LANGUAGE_CODE = 'en-us'
 
 TIME = 'UTC'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = ''
 
 USE_I18N = True
 
