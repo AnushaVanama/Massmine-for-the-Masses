@@ -5,7 +5,7 @@
   <div>
     <center><h1>Analysis Creation</h1></center>
     {% if user.is_authenticated %} 
-	<form method="post" action="{% url 'analysis:create_analysis' %}" target="_blank">
+	<form method="post" action="{% url 'analysis:create_analysis' %}" target="_self">
 		{% csrf_token %}			
 		{{studies_html|safe}}		
 	<input type="hidden" name="analysis_select" value="tweet_sent">
