@@ -11,5 +11,6 @@ Below link includes the step-by-step instructions and requirements for installin
 https://github.com/JoshCMoore/Massmine-for-the-Masses/blob/master/documentation/UserManual.pdf
 
 Team Members: Anusha Vanama
+
 Instructor: Dr. Somya Mohanty
 
